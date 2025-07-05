@@ -1,17 +1,17 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-export default function HomeScreen({ navigation }) {
+export default function HomeInfo({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>¡Bienvenido a Clendario menstrual!</Text>
-      <Text style={styles.subtitle}>Toca el botón para ir a su perfil.</Text>
+      <Text style={styles.title}>Información</Text>
+      <Text style={styles.subtitle}>Este calendario menstrual busca brindar toda la insformacion posible para que los usuarios se sientan comodos y seguros al utilizar nustra app.</Text>
 
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('Profile')}
+        onPress={() => navigation.navigate('Home')}
       >
-        <Text style={styles.buttonText}>Ir a Perfil</Text>
+        <Text style={styles.buttonText}>Volver al inicio</Text>
       </TouchableOpacity>
     </View>
   );

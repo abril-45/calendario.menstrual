@@ -3,23 +3,38 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './Vistas/HomeScreen';
-const MyStack = createStackNavigator();
+import HomeProfile from './Vistas/HomeProfile';
+import HomeInfo from './Vistas/HomeInfo';
+const Mytabs = createBottomTabNavigator();
 
 
 export default function App() {
   return (
     <NavigationContainer>
-      <MyStack.Navigator>
-        <MyStack.Screen
+      <Mytabs.Navigator>
+        <Mytabs.Screen
           name="Home"
           component={HomeScreen}
           options={{ title: 'Inicio de la App' }}
         />
-      </MyStack.Navigator>
+        <Mytabs.Screen
+          name="Profile"
+          component={HomeProfile}
+          options={{ title: 'Mi perfil' }}
+        />
+        <Mytabs.Screen
+          name="Info"
+          component={HomeInfo}
+          options={{ title: 'Información' }}
+        />
+      </Mytabs.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
+
   );
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -28,4 +43,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  
 });
