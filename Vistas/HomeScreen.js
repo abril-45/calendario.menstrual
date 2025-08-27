@@ -17,7 +17,7 @@ export default function HomeScreen({ navigation }) {
           style={styles.button} 
           onPress={() => navigation.navigate('Profile')}
         >
-          <Text style={styles.buttonText}>Acep</Text>
+          <Text style={styles.buttonText}>Aceptar</Text>
         </TouchableOpacity>
       </View>
     </View>
