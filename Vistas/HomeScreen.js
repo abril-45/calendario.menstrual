@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>¡Bienvenido a Clendario menstrual!</Text>
+      <Text style={styles.title}>¡Bienvenido a Calendario menstrual!</Text>
       <Text style={styles.subtitle}>Toca el botón para ir a su perfil.</Text>
 
       <TouchableOpacity
