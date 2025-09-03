@@ -1,11 +1,16 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import Api from '../Api';
 
 export default function HomeInfo({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Información</Text>
-      <Text style={styles.subtitle}>Este calendario menstrual busca brindar toda la insformacion posible para que los usuarios se sientan comodos y seguros al utilizar nustra app.</Text>
+      <Text style={styles.subtitle}>
+        Este calendario menstrual busca brindar toda la información posible para que los usuarios se sientan cómodos y seguros al utilizar nuestra app.
+      </Text>
+
+      <Api />
 
       <TouchableOpacity
         style={styles.button}
@@ -19,11 +24,10 @@ export default function HomeInfo({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#DE8FBC',
     padding: 20,
+    backgroundColor: '#DE8FBC',
+    alignItems: 'center',
+    flexGrow: 1,
   },
   title: {
     fontSize: 28,
@@ -35,7 +39,7 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 18,
     color: '#FFFFFF',
-    marginBottom: 40,
+    marginBottom: 20,
     textAlign: 'center',
     fontFamily: 'inria sans',
   },
@@ -44,11 +48,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 25,
     borderRadius: 8,
-    elevation: 3,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    marginTop: 20,
   },
   buttonText: {
     color: '#fff',

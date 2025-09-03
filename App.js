@@ -27,7 +27,7 @@ export default function App() {
         <Mytabs.Screen
           name="Info"
           component={HomeInfo}
-          options={{ title: 'Calendario' }}
+          options={{ title: 'Informacion' }}
         />
       </Mytabs.Navigator>
       <StatusBar style="auto" />
