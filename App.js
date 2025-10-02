@@ -5,8 +5,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './Vistas/HomeScreen';
 import HomeProfile from './Vistas/HomeProfile';
 import HomeInfo from './Vistas/HomeInfo';
+import Metodos from './Vistas/MetodoHigene';
 const Mytabs = createBottomTabNavigator();
-
 
 export default function App() {
   return (
@@ -26,6 +26,11 @@ export default function App() {
           name="Info"
           component={HomeInfo}
           options={{ title: 'Información' }}
+        />
+      <Mytabs.Screen
+          name="Metodos"
+          component={Metodos}
+          options={{ title: 'Metodos de Higene' }}
         />
       </Mytabs.Navigator>
       <StatusBar style="auto" />
