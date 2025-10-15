@@ -6,26 +6,28 @@ import HomeScreen from './Vistas/HomeScreen';
 import HomeProfile from './Vistas/HomeProfile';
 import HomeInfo from './Vistas/HomeInfo';
 import Metodos from './Vistas/MetodoHigene';
+
 const Mytabs = createBottomTabNavigator();
 
 export default function App() {
   return (
+
     <NavigationContainer>
       <Mytabs.Navigator>
         <Mytabs.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: 'Inicio de la App' }}
+          options={{ title: 'Edad' }}
         />
         <Mytabs.Screen
           name="Profile"
           component={HomeProfile}
-          options={{ title: 'Mi perfil' }}
+          options={{ title: 'Perfil' }}
         />
         <Mytabs.Screen
           name="Info"
           component={HomeInfo}
-          options={{ title: 'Información' }}
+          options={{ title: 'Informacion' }}
         />
       <Mytabs.Screen
           name="Metodos"
@@ -35,6 +37,7 @@ export default function App() {
       </Mytabs.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
+    
 
   );
 }
