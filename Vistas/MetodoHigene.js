@@ -27,7 +27,7 @@ export default function Metodos({ navigation }) {
 
           <TouchableOpacity 
             style={styles.button} 
-            onPress={() => navigation.navigate('Profile')}
+            onPress={() => navigation.navigate('Calendario')}
           >
             <Text style={styles.buttonText}>Volver</Text>
           </TouchableOpacity>

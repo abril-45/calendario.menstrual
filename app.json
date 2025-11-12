@@ -1,29 +1,28 @@
 {
   "expo": {
-    "name": "Opalo",
+    "name": "🌸Ópalo🌸",
     "slug": "calendario",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icono.png",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#f5b1d3"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/icono.png",
-        "backgroundColor": "#ffffff"
-      },
-      "edgeToEdgeEnabled": true
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#f5b1d3"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
     }
   }
 }
+

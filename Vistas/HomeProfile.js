@@ -21,7 +21,7 @@ export default function HomeScreen({ navigation }) {
 
         <TouchableOpacity 
           style={styles.button} 
-          onPress={() => navigation.navigate('Profile')}
+          onPress={() => navigation.navigate('Calendario')}
         >
           <Text style={styles.buttonText}>Aceptar</Text>
         </TouchableOpacity>
