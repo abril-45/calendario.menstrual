@@ -9,6 +9,7 @@ import HomeProfile from './Vistas/HomeProfile';
 import HomeInfo from './Vistas/HomeInfo';
 import Metodos from './Vistas/MetodoHigene';
 import Calendario from './Vistas/Calendario';
+import MetodosAnticon from './Vistas/MetodosAnticon';
 
 const Mytabs = createBottomTabNavigator();
 
@@ -74,6 +75,11 @@ export default function App() {
           name="Metodos"
           component={Metodos}
           options={{ title: 'Métodos de Higiene' }}
+        />
+        <Mytabs.Screen
+          name="MetodosAnticon"
+          component={MetodosAnticon}
+          options={{ title: 'Metodos Anticonpectivos' }}
         />
         <Mytabs.Screen
           name="Info"
