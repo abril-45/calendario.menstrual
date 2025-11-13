@@ -59,12 +59,12 @@ export default function App() {
         <Mytabs.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: 'Edad' }}
+          options={{ title: 'Login' }}
         />
         <Mytabs.Screen
           name="Profile"
           component={HomeProfile}
-          options={{ title: 'Perfil' }}
+          options={{ title: 'Registrarse' }}
         />
         <Mytabs.Screen
           name="Calendario"
