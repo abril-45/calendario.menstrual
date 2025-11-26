@@ -18,7 +18,7 @@ export default function UbicacionHosp({ navigation }) {
       {}
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate("Home")}
+        onPress={() => navigation.navigate("Calendario")}
       >
         <Text style={styles.buttonText}>Volver al inicio</Text>
       </TouchableOpacity>

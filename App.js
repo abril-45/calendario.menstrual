@@ -6,7 +6,6 @@ import { Ionicons } from '@expo/vector-icons';
 
 import HomeScreen from './Vistas/HomeScreen';
 import HomeProfile from './Vistas/HomeProfile';
-import HomeInfo from './Vistas/HomeInfo';
 import Metodos from './Vistas/MetodoHigene';
 import Calendario from './Vistas/Calendario';
 import MetodosAnticon from './Vistas/MetodosAnticon';
@@ -81,11 +80,6 @@ export default function App() {
           name="MetodosAnticon"
           component={MetodosAnticon}
           options={{ title: 'Metodos Anticonpectivos' }}
-        />
-        <Mytabs.Screen
-          name="Info"
-          component={HomeInfo}
-          options={{ title: 'Información' }}
         />
          <Mytabs.Screen
           name="UbicacionHosp"
