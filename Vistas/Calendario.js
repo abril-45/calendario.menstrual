@@ -18,7 +18,7 @@ export default function Calendario({ navigation }) {
   const [symptomName, setSymptomName] = useState("");
   const [symptomDesc, setSymptomDesc] = useState("");
 
-  // Cargar datos guardados 
+  // === Cargar datos guardados ===
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -35,13 +35,13 @@ export default function Calendario({ navigation }) {
     loadData();
   }, []);
 
-  //Guardar datos
+  // === Guardar datos ===
   useEffect(() => {
     AsyncStorage.setItem("periodHistory", JSON.stringify(periodHistory));
     AsyncStorage.setItem("symptomsList", JSON.stringify(symptomsList));
   }, [periodHistory, symptomsList]);
 
-
+  // === Días del calendario ===
   const daysOfWeek = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];
 
   const isToday = (day, month, year) => {
@@ -90,7 +90,7 @@ export default function Calendario({ navigation }) {
     return days;
   };
 
-  //Funciones de manejo
+  // === Funciones de manejo ===
   const markPeriodStart = () => {
     if (!selectedDate) return;
     setPeriodHistory([...periodHistory, { start: selectedDate, end: selectedDate }]);
@@ -156,12 +156,13 @@ export default function Calendario({ navigation }) {
 
   const calendarDays = getCalendarDays();
 
+  // === Render ===
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.title}>🌸Ópalo🌸</Text>
       <Text style={styles.subtitle}>Calendario menstrual</Text>
 
-      { /*del mes*/}
+      {/* Navegación de mes */}
       <View style={styles.monthHeader}>
         <TouchableOpacity
           onPress={() =>
@@ -189,14 +190,14 @@ export default function Calendario({ navigation }) {
         </TouchableOpacity>
       </View>
 
-      {/* de la semana */}
+      {/* Días de la semana */}
       <View style={styles.weekRow}>
         {daysOfWeek.map((d) => (
           <Text key={d} style={styles.weekDay}>{d}</Text>
         ))}
       </View>
 
-      {/* Dias del calendario */}
+      {/* Días del calendario */}
       <View style={styles.daysGrid}>
         {calendarDays.map((d, i) => (
           <TouchableOpacity
@@ -207,6 +208,7 @@ export default function Calendario({ navigation }) {
               d.today && styles.today,
               d.period && styles.period,
               d.symptom && styles.symptom,
+              selectedDate === d.date && styles.selectedDay,  // ⭐ DÍA SELECCIONADO
             ]}
             onPress={() => setSelectedDate(d.date)}
           >
@@ -215,7 +217,7 @@ export default function Calendario({ navigation }) {
         ))}
       </View>
 
-      {/* Botones*/}
+      {/* Botones para el día seleccionado */}
       {selectedDate && (
         <View style={styles.dayButtons}>
           <Text style={styles.selectedText}>📅 {selectedDate}</Text>
@@ -228,13 +230,13 @@ export default function Calendario({ navigation }) {
         </View>
       )}
 
-      {}
+      {/* Predicción */}
       <View style={styles.prediction}>
         <Text style={styles.predTitle}>🔮 Próximo periodo estimado</Text>
         <Text style={styles.predText}>{renderPrediction()}</Text>
       </View>
 
-      {}
+      {/* Registro de síntomas */}
       <View style={styles.symptomsBox}>
         <Text style={styles.sectionTitle}>🌼 Registro de síntomas</Text>
         <TextInput
@@ -273,7 +275,7 @@ export default function Calendario({ navigation }) {
         )}
       </View>
 
-      {}
+      {/* Historial */}
       <View style={styles.history}>
         <Text style={styles.sectionTitle}>🩸 Historial de periodos</Text>
         {periodHistory.length === 0 ? (
@@ -291,12 +293,11 @@ export default function Calendario({ navigation }) {
           ))
         )}
       </View>
-
-      
     </ScrollView>
   );
 }
 
+// === Estilos ===
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#f8bbd0", padding: 16 },
   title: { textAlign: "center", fontSize: 28, color: "#6a1b9a", fontWeight: "bold" },
@@ -321,6 +322,7 @@ const styles = StyleSheet.create({
   today: { backgroundColor: "#ad1457", borderColor: "#f06292", borderWidth: 2 },
   period: { backgroundColor: "#f06292" },
   symptom: { borderWidth: 2, borderColor: "#ffca28" },
+  selectedDay: { borderWidth: 3, borderColor: "#6a1b9a" }, // ⭐ NUEVO
   dayText: { color: "#6a1b9a" },
   dayButtons: { marginTop: 10, alignItems: "center" },
   selectedText: { fontWeight: "bold", marginBottom: 5 },
