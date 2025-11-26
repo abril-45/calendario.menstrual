@@ -10,6 +10,7 @@ import HomeInfo from './Vistas/HomeInfo';
 import Metodos from './Vistas/MetodoHigene';
 import Calendario from './Vistas/Calendario';
 import MetodosAnticon from './Vistas/MetodosAnticon';
+import UbicacionHosp from './Vistas/UbicacionHosp';
 
 const Mytabs = createBottomTabNavigator();
 
@@ -25,10 +26,10 @@ export default function App() {
             backgroundColor: '#fff',
             borderTopColor: '#eee',
             borderTopWidth: 1,
-            height: 60,
+            height: 92,
             paddingBottom: 5,
           },
-          // === ÍCONOS según el nombre de la pantalla ===
+          
           tabBarIcon: ({ color, size }) => {
             let iconName;
 
@@ -86,6 +87,11 @@ export default function App() {
           component={HomeInfo}
           options={{ title: 'Información' }}
         />
+         <Mytabs.Screen
+          name="UbicacionHosp"
+          component={UbicacionHosp}
+          options={{ title: 'Hospitales' }}
+        />
       </Mytabs.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
@@ -95,7 +101,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffffff',
     alignItems: 'center',
     justifyContent: 'center',
   },

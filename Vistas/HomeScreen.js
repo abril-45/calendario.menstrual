@@ -16,10 +16,10 @@ export default function HomeScreen({ navigation }) {
         const ip = (await Network.getIpAddressAsync()) || Constants.expoConfig?.hostUri?.split(':').shift();
         if (ip) {
           setAPI_URL(`http://${ip}:3000/api`);
-          console.log('🌐 API URL configurada:', `http://${ip}:3000/api`);
+          console.log(' API URL configurada:', `http://${ip}:3000/api`);
         }
       } catch (err) {
-        console.warn('⚠️ No se pudo detectar IP, usando localhost');
+        console.warn(' No se pudo detectar IP, usando localhost');
       }
     };
     setupAPI();
